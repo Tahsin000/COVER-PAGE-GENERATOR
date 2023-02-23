@@ -1,5 +1,7 @@
 
-      @import url("https://themes.googleusercontent.com/fonts/css?kit=KRlc5aipaMGxMZIuODnyG-qs93E6NzRxu6vGqCVGfpE");
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
       .item-center{
         display: flex;
         justify-content: center;
@@ -258,7 +260,6 @@
         text-decoration: none;
         vertical-align: baseline;
         font-size: 16pt;
-        font-family: "Work Sans";
         font-style: normal;
       }
       .c19 {
@@ -268,7 +269,6 @@
         text-decoration: underline;
         text-decoration-skip-ink: none;
         font-size: 18pt;
-        font-family: "Work Sans";
       }
       .c14 {
         padding-top: 0pt;
@@ -294,7 +294,6 @@
         text-decoration: none;
         vertical-align: baseline;
         font-size: 18pt;
-        font-family: "Work Sans";
         font-style: normal;
       }
       .c8 {
@@ -358,11 +357,9 @@
       .c18 {
         font-weight: 500;
         font-size: 13pt;
-        font-family: "Work Sans";
       }
       .c10 {
         font-size: 25pt;
-        font-family: "Work Sans";
         font-weight: 500;
       }
       .c17 {
@@ -373,7 +370,6 @@
       .c21 {
         font-weight: 500;
         font-size: 20pt;
-        font-family: "Work Sans";
       }
       .c16 {
         font-weight: 400;
@@ -383,11 +379,9 @@
       .c20 {
         font-weight: 400;
         font-size: 20pt;
-        font-family: "Work Sans";
       }
       .c22 {
         font-size: 18pt;
-        font-family: "Work Sans";
         font-weight: 400;
       }
       .c1 {
