@@ -1,0 +1,269 @@
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="css/tailwindcss.css"></script>
+  </head>
+  <body>
+    <div class="text-center p-5">
+      <small class="text-red-500"
+        >for desktop users only. Mobile version development is ongoing.</small
+      >
+    </div>
+    <div class="item-center grid grid-cols-1 md:grid-cols-2">
+      <div class="input_section m-5 border">
+        <h1 class="text-center text-3xl font-bold">COVER PAGE GENERATOR</h1>
+        <div class="grid md:grid-cols-3 grid-cols-1 gap-9 mt-7 p-5">
+          <div class="Department">
+            <input
+              id="Department"
+              class="border"
+              type="text"
+              placeholder="Department Name"
+            />
+          </div>
+          <div class="username">
+            <input
+              id="username"
+              class="border"
+              type="text"
+              placeholder="User Name"
+            />
+          </div>
+          <div class="ID">
+            <input id="ID" class="border" type="text" placeholder="ID" />
+          </div>
+          <div class="Semester">
+            <input
+              id="Semester"
+              class="border"
+              type="text"
+              placeholder="Semester"
+            />
+          </div>
+          <div class="Section">
+            <input
+              id="Section"
+              class="border"
+              type="text"
+              placeholder="Section"
+            />
+          </div>
+          <div class="Email">
+            <input id="Email" class="border" type="email" placeholder="Email" />
+          </div>
+          <div class="Contact">
+            <input
+              id="Contact"
+              class="border"
+              type="email"
+              placeholder="Contact no:"
+            />
+          </div>
+          <div class="CourseCode">
+            <input
+              id="CourseCode"
+              class="border"
+              type="email"
+              placeholder="Course Code"
+            />
+          </div>
+          <div class="CourseTitle">
+            <input
+              id="CourseTitle"
+              class="border"
+              type="email"
+              placeholder="Course Title"
+            />
+          </div>
+          <div class="CourseTeacher">
+            <input
+              id="CourseTeacher"
+              class="border"
+              type="email"
+              placeholder="Course Teacher"
+            />
+          </div>
+          <div class="TeacherDesignation">
+            <input
+              id="TeacherDesignation"
+              class="border"
+              type="email"
+              placeholder="Teacher Designation"
+            />
+          </div>
+          <div class="Date">
+            <input
+              id="Date"
+              class="border"
+              type="date"
+              placeholder="Date of Submission"
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3">
+          <p></p>
+          <button
+            onclick="HTMLtoPDF()"
+            class="rounded-lg bg-red-400 text-white text-xl p-3 m-5"
+          >
+            Generate PDF
+          </button>
+        </div>
+      </div>
+      <div class="c17 doc-content block" id="html_to_pdf" style="padding: 32px">
+        <div>
+          <p class="c6 c12"><span class="c8"></span></p>
+          <p class="c6 c12"><span class="c15 c18"></span></p>
+          <p class="c6">
+            <span
+              style="
+                overflow: hidden;
+                display: inline-block;
+                margin: 0px 0px;
+                border: 0px solid #000000;
+                transform: rotate(0rad) translateZ(0px);
+                -webkit-transform: rotate(0rad) translateZ(0px);
+                width: 698.35px;
+                height: 89.79px;
+              "
+              ><img
+                alt=""
+                src="images/image1.png"
+                style="
+                  width: 698.35px;
+                  height: 89.79px;
+                  margin-left: 0px;
+                  margin-top: 0px;
+                  transform: rotate(0rad) translateZ(0px);
+                  -webkit-transform: rotate(0rad) translateZ(0px);
+                "
+                title=""
+            /></span>
+          </p>
+          <div class="c11">
+            <p id="inputDepartment" style="text-align: center" class="c10">
+              Computer Science & Engineering (CSE)
+            </p>
+          </div>
+
+          <div style="margin-top: 42px">
+            <p class="c7"><span class="c15 c16"></span></p>
+            <p class="c7"><span class="c8"></span></p>
+            <p class="c2">
+              <span class="c4"
+                >Name :
+                <span id="inputUsername"
+                  >Muhammad Tahsin Abrar</span
+                ></span
+              >
+            </p>
+            <p class="c2">
+              <span class="c4">ID: <span id="inputId">CXXYYZZ</span></span>
+            </p>
+            <p class="c2">
+              <span class="c4"
+                >Semester: <span id="inputSemester">7th</span></span
+              >
+            </p>
+            <p class="c2">
+              <span class="c4"
+                >Section: <span id="inputSection">7BM</span></span
+              >
+            </p>
+            <p class="c2">
+              <span class="c22">Email: </span
+              ><span class="c19"
+                ><a
+                  class="c1"
+                  id="inputEmail"
+                  href="mailto:c191058@ugrad.iiuc.ac.bd"
+                  >cXXYYZZ@ugrad.iiuc.ac.bd</a
+                ></span
+              >
+            </p>
+            <p class="c2">
+              <span class="c4"
+                >Contact no: <span id="inputContact">018-12312312</span></span
+              >
+            </p>
+          </div>
+          <div style="margin-top: 42px">
+            <p class="c0"><span class="c5"></span></p>
+            <p class="c0"><span class="c5"></span></p>
+            <p class="c0"><span class="c5"></span></p>
+            <p class="c2">
+              <span class="c4"
+                >Course Code: <span id="inputCourseCode">CSE-47XY</span>
+              </span>
+            </p>
+            <p class="c2">
+              <span class="c4"
+                >Course Title:
+                <span id="inputCourseTitle">Computer Graphics Lab</span></span
+              >
+            </p>
+            <p class="c2">
+              <span class="c4"
+                >Course Teacher:
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+              >
+            </p>
+            <p class="c13">
+              <span class="c15 c21" id="inputCourseTeacher"
+                >Mohammad Mahadi Hassan</span
+              >
+            </p>
+            <p class="c3">
+              <span class="c5" id="inputTeacherDesignation"
+                >Associate Professor, CSE, IIUC</span
+              >
+            </p>
+          </div>
+
+          <div style="margin-top: 42px">
+            <p class="c0"><span class="c5"></span></p>
+            <p class="c9"><span class="c5"></span></p>
+            <p class="c9"><span class="c5"></span></p>
+            <p class="c0"><span class="c4"></span></p>
+            <p class="c14">
+              <span class="c22"
+                >Date of Submission:
+                <span id="inputDate">12/12/2020</span></span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <!-- <script type="text/javascript" src="js/html2canvas.js"></script>
+    <script type="text/javascript" src="js/jspdf.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://unpkg.com/html2canvas@1.0.0-rc.5/dist/html2canvas.js"></script>
+    <script>
+      // const input = document.getElementById('html_to_pdf');
+      // html2canvas(input)
+      //     .then((canvas) => {
+      //         const imgData = canvas.toDataURL('image/png');
+      //         const pdf = new jsPDF();
+      //         pdf.addImage(imgData, 'PNG', 0, 0);
+      //         pdf.save("download.pdf");
+      // });
+
+      // function HTMLtoPDF() {
+      // var doc = new jsPDF();
+      // var HTMLelement = $(".html_to_pdf").html();
+      // doc.fromHTML(HTMLelement, 10, 10, {
+      //     'width': 190
+      // });
+      // //doc.text('Hello world!, 10, 10)
+      // doc.save("htmltopdf.pdf");
+      // }
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/userInput.js"></script>
+  </body>
+</html>
