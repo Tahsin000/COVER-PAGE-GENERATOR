@@ -26,9 +26,9 @@ eventGenerator ('TeacherDesignation', 'inputTeacherDesignation');
 
 document.getElementById('Date').addEventListener('keyup', (event)=>{
     const d = new Date(event.target.value);
-    document.getElementById('inputDate').innerText = `${d.getDate()}/${d.getMonth()}/${d.getUTCFullYear()}`;
+    document.getElementById('inputDate').innerText = `${d.getDate()}/${d.getMonth()+1}/${d.getUTCFullYear()}`;
 });
 document.getElementById('Date').addEventListener('mouseleave', (event)=>{
     const d = new Date(event.target.value);
-    document.getElementById('inputDate').innerText = `${d.getDate()}/${d.getMonth()}/${d.getUTCFullYear()}`;
+    document.getElementById('inputDate').innerText = `${d.getDate()}/${d.getMonth()+1}/${d.getUTCFullYear()}`;
 });
