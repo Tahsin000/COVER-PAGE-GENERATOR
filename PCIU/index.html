@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment Cover Page Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Form Panel -->
+      <div class="form-panel">
+        <h1>Assignment Cover Generator</h1>
+        <p>
+          Fill in your details to generate a professional assignment cover page
+        </p>
+
+        <!-- Department Name -->
+        <div class="form-group">
+          <label>Department Name</label>
+          <input
+            type="text"
+            id="departmentName"
+            placeholder="Department of Civil Engineering"
+            value="Department of Civil Engineering"
+          />
+        </div>
+
+        <!-- Course Information -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>Course Code</label>
+            <input type="text" id="courseCode" placeholder="CE-101" />
+          </div>
+          <div class="form-group">
+            <label>Course Title</label>
+            <input
+              type="text"
+              id="courseTitle"
+              placeholder="Introduction to Civil Engineering"
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Assignment No</label>
+            <input type="text" id="assignmentNo" placeholder="01" />
+          </div>
+          <div class="form-group">
+            <label>Assignment Name</label>
+            <input
+              type="text"
+              id="assignmentName"
+              placeholder="Structural Analysis"
+            />
+          </div>
+        </div>
+
+        <!-- Student Information -->
+        <div class="form-group">
+          <label>Student Name</label>
+          <input type="text" id="studentName" placeholder="Your Full Name" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Student ID</label>
+            <input type="text" id="studentId" placeholder="202312345" />
+          </div>
+          <div class="form-group">
+            <label>Batch</label>
+            <input type="text" id="batch" placeholder="Spring 2023" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Program</label>
+            <input
+              type="text"
+              id="program"
+              placeholder="BSc in Civil Engineering"
+            />
+          </div>
+          <div class="form-group">
+            <label>Date of Submission</label>
+            <input type="date" id="submissionDate" />
+          </div>
+        </div>
+
+        <!-- Teacher Information -->
+        <div class="form-group">
+          <label>Course Teacher Name</label>
+          <input type="text" id="teacherName" placeholder="Dr. John Doe" />
+        </div>
+
+        <div class="form-group">
+          <label>Teacher's Department</label>
+          <input
+            type="text"
+            id="teacherDepartment"
+            placeholder="Department of Civil Engineering"
+            value="Department of Civil Engineering"
+          />
+        </div>
+
+        <!-- Export Buttons -->
+        <div class="export-buttons">
+          <!-- <button class="btn btn-pdf" id="exportPdf">Download as PDF</button> -->
+          <button class="btn btn-image" id="exportImage">
+            Download as Image
+          </button>
+        </div>
+      </div>
+
+      <!-- Preview Panel -->
+      <div class="preview-panel">
+        <div class="preview-label">Live Preview</div>
+        <div class="a4-container">
+          <div class="cover-page" id="coverPage">
+            <!-- Fixed Header Logo -->
+            <div class="header-section">
+              <img
+                class="university-logo"
+                src="header-logo.png"
+                alt="University Logo"
+              />
+            </div>
+
+            <!-- Department Banner -->
+            <div class="department-banner" id="displayDepartment">
+              Department of Civil Engineering
+            </div>
+
+            <!-- Course Section -->
+            <div class="course-section">
+              <div class="course-info">
+                <div class="info-row">
+                  <span class="info-label">Course Code</span>
+                  <span class="info-separator">:</span>
+                  <span class="info-value" id="displayCourseCode">-</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Course Title</span>
+                  <span class="info-separator">:</span>
+                  <span class="info-value" id="displayCourseTitle">-</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Assignment No</span>
+                  <span class="info-separator">:</span>
+                  <span class="info-value" id="displayAssignmentNo">-</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Assignment Name</span>
+                  <span class="info-separator">:</span>
+                  <span class="info-value" id="displayAssignmentName">-</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submission Table -->
+            <div class="submission-section">
+              <table class="submission-table">
+                <thead>
+                  <tr>
+                    <th>Submitted By:</th>
+                    <th>Submitted To:</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="field-label">Name of Student:</td>
+                    <td rowspan="2">
+                      <div
+                        style="
+                          padding: 4px 0;
+                          border-bottom: 2px solid #000;
+                          margin-bottom: 6px;
+                        "
+                      >
+                        <strong>Name of Course Teacher:</strong>
+                      </div>
+                      <div
+                        id="displayTeacherName"
+                        style="padding: 6px 0; font-weight: 400"
+                      >
+                        -
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="displayStudentName" class="field-value">-</td>
+                  </tr>
+                  <tr>
+                    <td class="field-label">ID No:</td>
+                    <td rowspan="3">
+                      <div
+                        style="
+                          padding: 4px 0;
+                          border-bottom: 2px solid #000;
+                          margin-bottom: 6px;
+                        "
+                      >
+                        <strong>Department:</strong>
+                      </div>
+                      <div
+                        id="displayTeacherDept"
+                        style="padding: 6px 0; font-weight: 400"
+                      >
+                        -
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="displayStudentId" class="field-value">-</td>
+                  </tr>
+                  <tr>
+                    <td class="field-label">Batch:</td>
+                  </tr>
+                  <tr>
+                    <td id="displayBatch" class="field-value">-</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td class="field-label">Program:</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td id="displayProgram" class="field-value">-</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td class="field-label">Date of Submission:</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td id="displayDate" class="field-value">-</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Website Footer -->
+    <footer class="website-footer">
+      <div class="footer-content">
+        <span class="developed-by">Developed by</span>
+        <a href="https://github.com/Tahsin000" target="_blank">GitHub</a>
+        <span class="separator">|</span>
+        <a href="https://www.linkedin.com/in/tahsin-abrar/" target="_blank">LinkedIn</a>
+      </div>
+    </footer>
+
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,440 @@
+:root {
+  --primary-color: #000000;
+  --secondary-color: #333333;
+  --text-dark: #000000;
+  --text-light: #ffffff;
+  --bg-color: #f5f5f5;
+  --border-color: #e0e0e0;
+  --input-bg: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  background: var(--bg-color);
+  min-height: 100vh;
+  padding: 20px;
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Form Panel */
+.form-panel {
+  background: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+.form-panel h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.form-panel p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+  background: var(--input-bg);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Export Buttons */
+.export-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px 24px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-pdf {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-pdf:hover {
+  background: var(--secondary-color);
+}
+
+.btn-image {
+  background: white;
+  color: var(--primary-color);
+}
+
+.btn-image:hover {
+  background: #f5f5f5;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Preview Panel */
+.preview-panel {
+  position: sticky;
+  top: 20px;
+}
+
+.preview-label {
+  text-align: center;
+  color: var(--text-dark);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.a4-container {
+  background: white;
+  width: 210mm;
+  height: 297mm;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+  border: 1px solid var(--border-color);
+}
+
+/* A4 Cover Page Content */
+.cover-page {
+  width: 100%;
+  height: 100%;
+  padding: 10mm 12mm;
+  background: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header with Logo */
+.header-section {
+  text-align: center;
+  margin-bottom: 8mm;
+  padding: 10px 10px 0 10px;
+}
+
+.university-logo {
+  max-width: 100%;
+  height: auto;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+/* Department Banner */
+.department-banner {
+  background: #f0f0f0;
+  color: var(--text-dark);
+  padding: 8px 20px;
+  text-align: center;
+  font-size: 16pt;
+  font-weight: 700;
+  margin: 0 -12mm 8mm -12mm;
+  border-top: 2px solid var(--text-dark);
+  border-bottom: 2px solid var(--text-dark);
+}
+
+/* Course Section */
+.course-section {
+  margin-bottom: 8mm;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11pt;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  line-height: 1.6;
+}
+
+.info-label {
+  font-weight: 700;
+  min-width: 150px;
+  color: var(--text-dark);
+}
+
+.info-separator {
+  margin: 0 10px;
+  font-weight: 700;
+}
+
+.info-value {
+  flex: 1;
+  background: #f9f9f9;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-weight: 400;
+  border: 1px solid #e8e8e8;
+}
+
+/* Submission Section */
+.submission-section {
+  margin-top: auto;
+}
+
+.submission-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--text-dark);
+  font-size: 10pt;
+}
+
+.submission-table th {
+  background: #f0f0f0;
+  padding: 7px 8px;
+  font-weight: 700;
+  font-size: 11pt;
+  border: 1px solid var(--text-dark);
+  text-align: center;
+}
+
+.submission-table td {
+  padding: 5px 8px;
+  border: 1px solid var(--text-dark);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.submission-table .field-label {
+  font-weight: 700;
+  width: 40%;
+  background: #fafafa;
+}
+
+.submission-table .field-value {
+  font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .a4-container {
+    width: 190mm;
+    height: 268.6mm;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-panel {
+    position: relative;
+    top: 0;
+  }
+
+  .a4-container {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    aspect-ratio: 210 / 297;
+    overflow: hidden;
+  }
+
+  .cover-page {
+    transform: scale(1);
+    transform-origin: top left;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    overflow-x: hidden;
+  }
+
+  .container {
+    gap: 20px;
+    overflow-x: hidden;
+  }
+
+  .form-panel {
+    padding: 20px;
+  }
+
+  .form-panel h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .export-buttons {
+    flex-direction: column;
+  }
+
+  .a4-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+/* Print and Export Styles */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    background: white;
+  }
+
+  .form-panel,
+  .preview-label {
+    display: none;
+  }
+
+  .preview-panel {
+    width: 210mm;
+    height: 297mm;
+  }
+
+  .a4-container {
+    box-shadow: none;
+    border: none;
+    page-break-after: always;
+  }
+}
+
+/* Ensure consistent export on all devices */
+@media screen and (max-width: 768px) {
+  /* When generating PDF/image, force A4 dimensions */
+  .cover-page {
+    font-size: 11pt;
+  }
+
+  .department-banner {
+    font-size: 16pt;
+  }
+
+  .submission-table {
+    font-size: 10pt;
+  }
+
+  .submission-table th {
+    font-size: 11pt;
+  }
+
+  .university-logo {
+    max-height: 70px;
+  }
+}
+
+/* Website Footer */
+.website-footer {
+  background: white;
+  border-top: 1px solid var(--border-color);
+  padding: 20px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footer-content .developed-by {
+  color: #666;
+  font-weight: 500;
+  margin-right: 8px;
+  font-style: italic;
+}
+
+.footer-content a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.footer-content a:hover {
+  color: #004499;
+  background: #f0f7ff;
+}
+
+.footer-content .separator {
+  margin: 0 6px;
+  color: #ccc;
+  font-weight: 300;
+}
