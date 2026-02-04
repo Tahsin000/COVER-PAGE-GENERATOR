@@ -151,7 +151,7 @@ function loadFromLocalStorage() {
 //   }
 // });
 
-// Image Export - Works properly
+// Image Export - A4 format on all devices
 exportImageBtn.addEventListener('click', async function() {
   if (!validateForm()) {
     alert('⚠️ Please fill in all required fields before exporting!');
@@ -162,16 +162,35 @@ exportImageBtn.addEventListener('click', async function() {
   this.innerHTML = '⏳ Generating Image...';
   
   try {
-    // Use html2canvas directly on the coverPage
-    const canvas = await html2canvas(coverPage, {
+    // Clone the cover page to avoid affecting the display
+    const clone = coverPage.cloneNode(true);
+    clone.style.position = 'absolute';
+    clone.style.left = '-9999px';
+    clone.style.top = '0';
+    
+    // Force A4 dimensions (210mm x 297mm at 96 DPI = 794px x 1123px)
+    clone.style.width = '794px';
+    clone.style.height = '1123px';
+    clone.style.transform = 'none';
+    clone.style.padding = '37.8px 45.4px'; // 10mm x 12mm in pixels
+    
+    document.body.appendChild(clone);
+    
+    // Capture at high resolution for A4 output
+    const canvas = await html2canvas(clone, {
       scale: 3,
       useCORS: true,
       logging: false,
       allowTaint: true,
       scrollY: 0,
       scrollX: 0,
-      backgroundColor: '#ffffff'
+      backgroundColor: '#ffffff',
+      width: 794,
+      height: 1123
     });
+    
+    // Remove clone
+    document.body.removeChild(clone);
     
     // Convert to blob and download
     canvas.toBlob(function(blob) {
@@ -192,6 +211,10 @@ exportImageBtn.addEventListener('click', async function() {
     
   } catch (error) {
     console.error('Image generation error:', error);
+    // Clean up clone if it exists
+    const clone = document.querySelector('[style*="-9999px"]');
+    if (clone) document.body.removeChild(clone);
+    
     this.innerHTML = '❌ Error! Try again';
     setTimeout(() => {
       this.innerHTML = 'Download as Image';
